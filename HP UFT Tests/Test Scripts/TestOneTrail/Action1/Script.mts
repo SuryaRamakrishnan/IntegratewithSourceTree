@@ -39,3 +39,29 @@ If Browser("Login | Salesforce").Page("Home Page ~ Salesforce").Link("Home").Wai
 	
 End If
 
+
+
+
+'Logout function
+
+Browser("Login | Salesforce").Page("Home Page ~ Salesforce").WebElement("userNav-arrow").Click @@ hightlight id_;_Browser("Login | Salesforce").Page("Home Page ~ Salesforce").WebElement("userNav-arrow")_;_script infofile_;_ZIP::ssf1.xml_;_
+
+Browser("Login | Salesforce").Page("Home Page ~ Salesforce").Link("Logout").Click @@ hightlight id_;_Browser("Login | Salesforce").Page("Home Page ~ Salesforce").Link("Logout")_;_script infofile_;_ZIP::ssf3.xml_;_
+
+'Verify Logout Successfull
+
+If Browser("Login | Salesforce").Page("Login | Salesforce").WebEdit("username").WaitProperty ("html id","sername", 1000) Then
+	
+	Reporter.ReportEvent micPass, "Verify whether Salesforce application is Logged Out","Salesforce Application is logged out successfully"
+	
+	
+	else
+	
+	Reporter.ReportEvent micFail, "Verify whether Salesforce application is Logged Out","Salesforce Application is not logged out"
+	
+End If
+
+
+'Close browser
+ @@ hightlight id_;_Browser("Login | Salesforce").Page("Login | Salesforce_2")_;_script infofile_;_ZIP::ssf4.xml_;_
+Browser("Login | Salesforce").CloseAllTabs
